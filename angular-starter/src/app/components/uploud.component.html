@@ -1,0 +1,42 @@
+﻿<div dir="rtl" class="container">
+    <div dir="rtl" class="row">
+        <div dir="rtl" class="col-md-4">
+            <form dir="rtl" >
+                <div dir="rtl" class="form-group">
+                    <input type="file"  dir="rtl" class="form-control" (change)="fileChange($event)" multiple />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        
+       
+              
+
+<div *ngIf="flag">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a>encryption rules</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--<div *ngIf="degel==true" >
+     <div *ngFor="let item of fileList2">
+   
+    <img src="/src/picture/{{item}}" width="50" height="50" />
+  <a>{{item}}</a>
+    </div>
+</div>-->
+
+
+
+
+    <my-kolaz [listImage]="fileList2"></my-kolaz>

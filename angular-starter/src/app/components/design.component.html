@@ -1,0 +1,37 @@
+﻿
+<mat-card class="col-lg-12">
+    <div>
+
+        <div class="col-lg-6">
+            <h2>מסגרות </h2>
+            צבע מסגרת  <input type="color" (change)="changeColorFrame($event)" />
+            <br />
+            <br />
+            <input type="number" name="mat-slider" placeholder="עובי מסגרת" [(ngModel)]="kolazService.lineWidth"/>
+            <mat-slider name="mat-slider" [(ngModel)]="kolazService.lineWidth" min="0" max="50" step="1" mat-raised-button></mat-slider>
+
+        </div>
+        <div class="col-lg-6">
+            <h2>רקע קולא'ז </h2>
+            <mat-radio-group>
+                <mat-radio-button name="check" value="1" (change)="onChangeColor()" (click)="imgeBackground=false ; transparentBackground=false ;colorBackground=true;">    צבע</mat-radio-button>
+                <input *ngIf="colorBackground==true" id="myColor" type="color" (change)="f($event)" [(ngModel)]="color" />
+                <br />
+                <mat-radio-button name="check" value="3" (click)="colorBackground=false; transparentBackground=false ;imgeBackground=true;">   תמונה</mat-radio-button>
+                <input *ngIf="imgeBackground==true" type="file" dir="rtl" class="form-control" (change)="fileChange($event)" accept="image/x-png,image/gif,image/jpeg,image/*" />
+                <br />
+                <mat-radio-button name="check" value="2" (change)="onChange()" (click)="imgeBackground=false ;colorBackground=false; transparentBackground=true ;">שקוף</mat-radio-button>
+            </mat-radio-group>
+            <!--<h1>                     </h1>
+            <h1>                     </h1>
+            <div >
+                <button>מסגרת לתמונה</button>
+                <h6>גודל המסגרת</h6>
+                <input type="number" />
+                <h6>צבע המסגרת</h6>
+
+            </div>-->
+        </div>
+
+    </div>
+</mat-card>

@@ -1,0 +1,72 @@
+﻿ 
+<div  *ngIf="degelInput==true">
+    
+    <div class="col-lg-3" ></div>
+    <div dir="rtl"  class="container ; col-lg-7"  >
+        <br />
+        <!--<span>Upload</span>
+        <input type="file" id="btnUpload" value="Upload" (change)="fileChange($event)" class="upload" multiple />-->
+        <nav  dir="rtl">
+
+            <ul class="nav nav-tabs">
+                <!--<li (click)="open1()"><my-kolaz-detailes *ngIf="val==1" [numOfPicture]="numOfPicture"></my-kolaz-detailes><a>הגדרות קולא'ז</a></li>-->
+                <li routerLink="/kolazDetailes" routerLinkActive="active"><a style="color:#fcb040 ; font-family:'AhlaB' ;font-size:larger">הגדרות קולא'ז</a></li>
+
+                <!--<li routerLink="/kolazDetailes" [inputNumOfPicture]="numOfPicture" routerLinkActive="active"><a>הגדרות קולא'ז</a></li>-->
+                <li routerLink="/shape" routerLinkActive="active"><a style="color:#fcb040">צורה</a></li>
+                <li routerLink="/design" routerLinkActive="active"><a style="color:#fcb040">עיצוב</a></li>
+            </ul>
+        </nav>
+
+        <router-outlet></router-outlet>
+
+       <br />
+        <br />
+        <br />
+            <div style="background:transparent" dir="rtl">
+                <my-kolaz *ngIf="degel==true" [arrPicturPointInput]="arrPicturPoint" [listImage]="fileList2"></my-kolaz>
+            </div>
+      
+       
+        </div>
+        <br />
+        <br />
+   
+    <div class="col-lg-1">
+        <br />
+        <br />
+        <div dir="rtl">
+            <div class="row">
+                <div class="row">
+                    <form >
+                        <div dir="rtl" >
+                            <label style="width:100px; background-color:#fcb040">
+                                <label hidden="hidden">
+                                    <input type="file" accept="image/x-png,image/gif,image/jpeg,image/*" dir="rtl" class="form-control" (change)="fileChange1($event)" multiple />
+                                </label>
+                                עיון<a>'      '</a><label *ngIf="fileList2">{{fileList2.length}}</label>                                                    
+                            </label>                       
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--<body data-spy="scroll" data-target=".navbar" data-offset="50">-->
+        <div  class="container-fluid ; dropdown"   data-spy="scroll" data-target=".navbar" data-offset="50">
+           
+            <div style="overflow-y:scroll; height:800px; width:110px"  dir="rtl">
+                <div *ngIf="degel1==true">
+                    <div *ngFor="let item of fileList2">
+                        <button style="color:red" (click)="deletePicture(item)">X</button>
+                        <img src="/src/picture/{{item}}" width="80" height="80" />
+                        <h1>  </h1>                                        
+                    </div>
+                </div>
+
+            </div>
+            </div>
+</div>
+
+    <div class="col-lg-1"> </div>   
+</div>

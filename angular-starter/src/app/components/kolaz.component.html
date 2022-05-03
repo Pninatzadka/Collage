@@ -1,0 +1,31 @@
+﻿
+
+    <!--[style.backgroundImage]="url(src/picture/{{ kolazService.backGroundPicture}})"-->
+<div >
+   <div class="col-lg-10">
+    <canvas class="profile-image "
+            id="myCanvas" width="{{ kolazService.kolaz.width}}" height="{{ kolazService.kolaz.height}}" [style.backgroundColor]="kolazService.color" style="border:5px solid #000000" #myCanvas></canvas>
+    <!--<canvas class="profile-image"
+            id="myCanvas2" width="{{ kolazService.kolaz.width}}" height="{{ kolazService.kolaz.width}}" (click)="l(); degel=true"  style="border:5px solid #000000" #myCanvas2></canvas>-->
+    <!--*ngIf="degel==true"-->
+    <div hidden="hidden">
+        <div *ngFor="let item of listImage">
+            <img id={{item}} src="/src/picture/{{item}}" width="300" height="300" />
+        </div>
+    </div>
+    <img hidden="hidden" *ngIf="kolazService.degel==true" id="img" src="/src/backGroundPicture/{{kolazService.backGroundPicture}}" width="{{ kolazService.kolaz.width}}" height="{{ kolazService.kolaz.height}}" />
+</div>
+    <div class="col-lg-2">
+        <button mat-raised-button style="background:#8dc63f" (click)="createinServer();degel=true">צור</button>
+    </div>
+</div>
+<!--<img id="backgroundImage" src="/src/picture/{{kolazService.backGroundPicture}}" width="300" height="300" />-->
+
+
+<!--<style>
+    .profile-image {
+        background-image: url('/src/picture/{{kolazService.backGroundPicture}}) 
+        /*background-image: url('/src/picture/026.JPG');*/
+    }
+</style>-->
+

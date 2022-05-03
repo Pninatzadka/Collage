@@ -1,0 +1,45 @@
+﻿
+
+    <mat-card class="col-lg-12">
+        <div>
+            <div class="col-lg-4">
+                <label>
+                    <br />
+                    <br />
+                    <br />
+                    כמות תמונות רצויה
+                    <input type="number" [(ngModel)]="kolazService.kolaz.numPictures" />
+                </label>
+            </div>
+            <div class="col-lg-4">
+                <div *ngIf="kolazService.isShape==true" >
+                    <mat-form-field>
+                        בחר צורה
+                        <mat-select [(ngModel)]="kolazService.kolaz.shape" name="typeMortgage" id="shitatHechzer1">
+                            <mat-option *ngFor="let item of drawNewShapeService.arrAllShapes" value="{{item}}" (click)="finishEdit()"> <img src="/src/shape/{{item}}.png" width="50" height="50" />{{item}} </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <br />
+
+                    <button mat-raised-button style="background:#8dc63f" (click)="add(); addShapeDegel=true;">הוספת צורה חדשה</button>
+
+                    <br />
+                    <!--<app-canvas *ngIf="addShapeDegel==true"  [degelInput]="degel" ></app-canvas>-->
+                </div>
+            </div >
+
+            <div class="col-lg-4">
+                <h2>צורה </h2>
+
+
+                <mat-radio-button type="radio" name="check" (click)="kolazService.kolaz.isGrid = false; kolazService.isShape= true;">צורה</mat-radio-button>
+                <h1>                     </h1>
+                <mat-radio-button type="radio" name="check" (click)="kolazService.isShape = false; kolazService.kolaz.isGrid = true; clean()">רשת</mat-radio-button>
+               <br />
+                
+            </div>
+            <!--<button mat-raised-button color="primary">The</button>
+        <button mat-raised-button color="accent">Buttons</button>-->
+            <!--<button mat-raised-button color="primary" (click)="finishEdit()">סיימתי</button>-->
+        </div>
+</mat-card>

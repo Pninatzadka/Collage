@@ -1,0 +1,32 @@
+﻿<mat-card>
+    <div>
+
+        <h2>פרטי קולאז </h2>
+
+
+        <label>
+            אורך
+            <input type="number" name="height" [(ngModel)]="kolazService.kolaz.height" />
+        </label>
+        <label>
+            רוחב
+            <input type="number" name="width" [(ngModel)]="kolazService.kolaz.width" />
+        </label>
+        <label>
+            צפיפות
+            <input type="number" name="width" [(ngModel)]="kolazService.kolaz.space" />
+        </label>
+        <label>
+            מספר תמונות
+            <input type="number" name="numPictures" [(ngModel)]="kolazService.kolaz.numPictures" />
+            <!--<input type="number" name="numPictures" [(ngModel)]="kolazService.kolaz.numPictures" value={{inputNumOfPicture}} />-->
+        </label>
+        <!--<button (click)="finishEdit()"> סיימתי </button>-->
+
+
+    </div>
+</mat-card>
+
+
+   
+   
